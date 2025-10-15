@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://wcpckqr2ol3v"]
+[gd_scene load_steps=7 format=3 uid="uid://wcpckqr2ol3v"]
 
 [ext_resource type="Script" uid="uid://bc4lb3i7ei7gu" path="res://scripts/menu.gd" id="1_tmk6g"]
 [ext_resource type="PackedScene" uid="uid://d0aamwg2px8bl" path="res://scenes/levels/Nivel0.tscn" id="2_apwh8"]
 [ext_resource type="Texture2D" uid="uid://dkqdum3r8ny3" path="res://assets/spritesandtiles/Inicio.png" id="2_oosx4"]
 [ext_resource type="FontFile" uid="uid://c4fkysu06yvv" path="res://assets/fonts/Jersey10-Regular.ttf" id="3_apwh8"]
+[ext_resource type="AudioStream" uid="uid://17elphf1wmce" path="res://assets/sounds/menu-music.mp3" id="5_apwh8"]
 
 [sub_resource type="FontVariation" id="FontVariation_0cngb"]
 base_font = ExtResource("3_apwh8")
@@ -45,3 +46,8 @@ theme_override_fonts/font = SubResource("FontVariation_0cngb")
 theme_override_font_sizes/font_size = 130
 text = "Salir"
 flat = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_apwh8")
+autoplay = true
+parameters/looping = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://d0aamwg2px8bl"]
+[gd_scene load_steps=19 format=4 uid="uid://d0aamwg2px8bl"]
 
 [ext_resource type="PackedScene" uid="uid://bfip082moxqui" path="res://scenes/levels/gametilemap.tscn" id="1_ichrq"]
 [ext_resource type="PackedScene" uid="uid://d1maj0pp05ke6" path="res://scenes/player.tscn" id="2_nfiun"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b2mm36sbdhnlx" path="res://scenes/hurtbox.tscn" id="9_21qs8"]
 [ext_resource type="PackedScene" uid="uid://bjaw3sxtqrsuj" path="res://scenes/busstop.tscn" id="10_3n6kj"]
 [ext_resource type="PackedScene" uid="uid://d3xv6ixt5ji5u" path="res://scenes/ui.tscn" id="10_ru5wc"]
+[ext_resource type="AudioStream" uid="uid://ti3u6gygr2a1" path="res://assets/sounds/bgm.mp3" id="11_ichrq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_57et8"]
 texture = ExtResource("3_rg5b7")
@@ -200,5 +201,11 @@ autoplay = true
 [node name="Busstop" parent="." instance=ExtResource("10_3n6kj")]
 position = Vector2(4532, 69)
 scale = Vector2(0.08, 0.08)
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_ichrq")
+volume_db = -18.0
+autoplay = true
+parameters/looping = true
 
 [connection signal="body_entered" from="Killzone" to="Killzone" method="_on_body_entered"]
