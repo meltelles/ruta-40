@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://wcpckqr2ol3v"]
+
+[ext_resource type="Script" uid="uid://bc4lb3i7ei7gu" path="res://scripts/menu.gd" id="1_tmk6g"]
+[ext_resource type="PackedScene" uid="uid://d0aamwg2px8bl" path="res://scenes/levels/Nivel0.tscn" id="2_apwh8"]
+[ext_resource type="Texture2D" uid="uid://dkqdum3r8ny3" path="res://assets/spritesandtiles/Inicio.png" id="2_oosx4"]
+[ext_resource type="FontFile" uid="uid://c4fkysu06yvv" path="res://assets/fonts/Jersey10-Regular.ttf" id="3_apwh8"]
+
+[sub_resource type="FontVariation" id="FontVariation_0cngb"]
+base_font = ExtResource("3_apwh8")
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+scale = Vector2(0.3, 0.3)
+script = ExtResource("1_tmk6g")
+first_level = ExtResource("2_apwh8")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_oosx4")
+
+[node name="Buttons" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 1772.0
+offset_top = 1482.0
+offset_right = 2037.0
+offset_bottom = 1684.0
+
+[node name="PlayButton" type="Button" parent="Buttons"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 45
+theme_override_fonts/font = SubResource("FontVariation_0cngb")
+theme_override_font_sizes/font_size = 130
+text = "Jugar"
+flat = true
+
+[node name="QuitButton" type="Button" parent="Buttons"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 45
+theme_override_fonts/font = SubResource("FontVariation_0cngb")
+theme_override_font_sizes/font_size = 130
+text = "Salir"
+flat = true

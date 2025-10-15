@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2mm36sbdhnlx"]
+
+[ext_resource type="Script" uid="uid://b12dbc8bhnbpf" path="res://scripts/hurtbox.gd" id="1_xlapc"]
+
+[node name="Hurtbox" type="Area2D"]
+script = ExtResource("1_xlapc")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true

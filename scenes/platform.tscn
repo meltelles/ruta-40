@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://c61a031i77xj4"]
+
+[ext_resource type="Script" uid="uid://bk8yuc2apbny5" path="res://scripts/platform.gd" id="1_nlgqw"]
+[ext_resource type="Texture2D" uid="uid://112q8l8bvkj7" path="res://assets/spritesandtiles/gametilesheet.png" id="2_507ja"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n1ckp"]
+size = Vector2(128, 32)
+
+[node name="Platform" type="AnimatableBody2D"]
+script = ExtResource("1_nlgqw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_n1ckp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_507ja")
+region_enabled = true
+region_rect = Rect2(128, 0, 128, 32)

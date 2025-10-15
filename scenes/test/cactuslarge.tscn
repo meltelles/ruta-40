@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjjnw22upwqtt"]
+
+[ext_resource type="PackedScene" uid="uid://bfip082moxqui" path="res://scenes/levels/gametilemap.tscn" id="1_ue1ig"]
+[ext_resource type="PackedScene" uid="uid://b2mm36sbdhnlx" path="res://scenes/hurtbox.tscn" id="2_m2h1a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gfc2b"]
+size = Vector2(62, 30)
+
+[node name="Spike" type="Node2D"]
+
+[node name="spike" parent="." instance=ExtResource("1_ue1ig")]
+position = Vector2(220, 220)
+tile_map_data = PackedByteArray(0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+[node name="Hurtbox" parent="spike" instance=ExtResource("2_m2h1a")]
+collision_layer = 8
+collision_mask = 2
+DAMAGE_INTERVAL_MS = 600
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spike/Hurtbox"]
+position = Vector2(40, 9)
+shape = SubResource("RectangleShape2D_gfc2b")
+
+[connection signal="body_entered" from="spike/Hurtbox" to="spike/Hurtbox" method="_on_body_entered"]

@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3xv6ixt5ji5u"]
+
+[ext_resource type="Script" uid="uid://dhvp51ouc5f11" path="res://scripts/ui.gd" id="1_x4jx1"]
+[ext_resource type="Texture2D" uid="uid://dciiwav8uxqx5" path="res://assets/spritesandtiles/medialuna.png" id="2_yev5y"]
+
+[node name="Ui" type="CanvasLayer"]
+script = ExtResource("1_x4jx1")
+full_heart = ExtResource("2_yev5y")
+heart_size = Vector2i(64, 64)
+
+[node name="Root" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Hearts" type="HBoxContainer" parent="Root"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0

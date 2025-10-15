@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dq2nfbgagwt38"]
+
+[ext_resource type="Script" uid="uid://lrdid31yd7ry" path="res://scripts/heal_pickup.gd" id="1_wtvyj"]
+[ext_resource type="PackedScene" uid="uid://bfip082moxqui" path="res://scenes/levels/gametilemap.tscn" id="2_ly4ge"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_02w8u"]
+size = Vector2(43, 37)
+
+[node name="HealPickup" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_wtvyj")
+
+[node name="gametilemap" parent="." instance=ExtResource("2_ly4ge")]
+scale = Vector2(0.1, 0.1)
+tile_map_data = PackedByteArray(0, 0, 13, 0, 1, 0, 2, 0, 12, 0, 15, 0, 0, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(21.5, 2.5)
+shape = SubResource("RectangleShape2D_02w8u")

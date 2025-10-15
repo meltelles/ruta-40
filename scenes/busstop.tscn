@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://bjaw3sxtqrsuj"]
+
+[ext_resource type="Texture2D" uid="uid://cibxd4gmeqdd7" path="res://assets/spritesandtiles/busstop.png" id="1_vv0l8"]
+[ext_resource type="AudioStream" uid="uid://byoobg0awpsmo" path="res://assets/sounds/level-clear.mp3" id="2_oi4tm"]
+[ext_resource type="Script" uid="uid://dr2bju4bk5ab1" path="res://scripts/ending_zone.gd" id="2_xjad6"]
+[ext_resource type="PackedScene" uid="uid://wcpckqr2ol3v" path="res://scenes/levels/menu.tscn" id="3_eru8g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oi4tm"]
+size = Vector2(22.080582, 21.482449)
+
+[node name="Busstop" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_vv0l8")
+
+[node name="EndingZone" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("2_xjad6")
+main_menu = ExtResource("3_eru8g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EndingZone"]
+position = Vector2(-43.99999, 0.49999332)
+scale = Vector2(30.524559, 48.73746)
+shape = SubResource("RectangleShape2D_oi4tm")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="EndingZone"]
+stream = ExtResource("2_oi4tm")
